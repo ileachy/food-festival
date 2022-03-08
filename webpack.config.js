@@ -21,6 +21,18 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
+            options: {
+              esModules: false,
+              name(file) {
+                return "[path][name].[exe]";
+              },
+              publicPath: function (url) {
+                return url.replace("../", "/assets/");
+              },
+            },
+          },
+          {
+            loader: "image-webpack-loader",
           },
         ],
       },
