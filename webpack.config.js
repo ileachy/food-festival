@@ -3,7 +3,7 @@ const path = require("path");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 
-module.exports = {
+const config = {
   entry: {
     app: "./assets/js/script.js",
     events: "./assets/js/events.js",
@@ -26,7 +26,7 @@ module.exports = {
               name(file) {
                 return "[path][name].[exe]";
               },
-              publicPath: function (url) {
+              publicPath(url) {
                 return url.replace("../", "/assets/");
               },
             },
@@ -66,3 +66,5 @@ module.exports = {
   ],
   mode: "development",
 };
+
+module.exports = config;

@@ -13,7 +13,7 @@
     />
     <link rel="manifest" href="dist/manifest.json" />
 
-    <script src="./dist/app.bundle.js" defer></script>
+    <script src="./dist/app.bundle.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -228,17 +228,17 @@
         Reserved.
       </div>
     </footer>
-    <script>
-      (function () {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker
-            .register("./service-worker.js")
-            .then(() => console.log("Service Worker registered successfully."))
-            .catch((error) =>
-              console.log("Service Worker registration failed:", error)
-            );
-        }
-      })();
-    </script>
   </body>
+  <script>
+    (function () {
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then(() => console.log("Service Worker registered successfully."))
+          .catch((error) =>
+            console.log("Service Worker registration failed:", error)
+          );
+      }
+    })();
+  </script>
 </html>
